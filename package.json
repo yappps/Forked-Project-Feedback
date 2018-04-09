@@ -15,7 +15,7 @@
     "start:dev:server": "cd server && yarn dev"
   },
   "engines": {
-    "node": "9.3.0",
+    "node": "^9.3.0",
     "yarn": "1.5.1"
   },
   "cacheDirectories": [
@@ -25,7 +25,8 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/thoughtworks-jumpstart/jumpstart-project-feedback-team-b"
+    "url":
+      "https://github.com/thoughtworks-jumpstart/jumpstart-project-feedback-team-b"
   },
   "license": "MIT",
   "devDependencies": {
