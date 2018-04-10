@@ -13,6 +13,7 @@ import {
 } from "../context_helper";
 
 class Signup extends React.Component {
+  // why use static => Recall in the past, we do proptypes outside of the class which often make us scroll to the very bottom of the file to learn about props. By declaring static, it allows you to keep them inside of the class.
   static propTypes = {
     history: object.isRequired,
     cookies: instanceOf(Cookies).isRequired,

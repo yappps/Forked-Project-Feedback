@@ -150,7 +150,7 @@ async function sendPasswordResetEmail(req, res) {
 async function resetPassword(req, res) {
   const user = await User.findOne({ passwordResetToken: req.params.token })
     .where("passwordResetExpires")
-    .gt(Date.now())
+    .gt(Date.now()) //gt = greater
     .exec();
 
   if (!user) {
@@ -160,6 +160,7 @@ async function resetPassword(req, res) {
   }
 
   user.setPassword(req.body.user.password);
+  // undefined : setting the Token and ResetExpires to undefined. "I want to delete these 2 from the database"
   user.passwordResetToken = undefined;
   user.passwordResetExpires = undefined;
   await user.save();

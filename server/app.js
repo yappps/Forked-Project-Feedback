@@ -28,6 +28,7 @@ app.use(require("method-override")());
 
 const staticFiles = express.static(path.join(__dirname, "../client/build"));
 
+// only happen in production
 if (isProduction) {
   app.use(staticFiles);
 }

@@ -20,6 +20,7 @@ router.post("/user/forgot-password", handleAsyncError(sendPasswordResetEmail));
 
 router.post("/user/reset-password/:token", handleAsyncError(resetPassword));
 
+// jwt.required is because user need to be authenticated. and hide the api
 router.get("/user", jwt.required, handleAsyncError(getCurrentUser));
 
 router.put("/user", jwt.required, handleAsyncError(updateCurrentUser));

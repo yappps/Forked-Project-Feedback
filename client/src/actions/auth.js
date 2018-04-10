@@ -21,6 +21,7 @@ export function login({
     })
   }).then(response => {
     if (response.ok) {
+      // we save the cookie when user login. but delete when user log out
       return response.json().then(json => {
         sessionContext.saveSession(json.token, json.user);
         cookies.set("token", json.token, {

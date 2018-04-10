@@ -113,7 +113,7 @@ class Header extends React.Component {
 const mapContextToProps = context => {
   return mapSessionContextToProps(context);
 };
-
+// withRouter is a higher order component and it  provide history, location, match
 export default withRouter(
   subscribe(ProviderContext, mapContextToProps)(withCookies(Header))
 );

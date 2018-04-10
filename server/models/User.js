@@ -40,6 +40,7 @@ UserSchema.methods.validPassword = function(password) {
 UserSchema.methods.generateJWT = function() {
   const today = new Date();
   const exp = new Date(today);
+  // expiry date in seconds from 1970
   exp.setDate(today.getDate() + 60);
 
   return jwt.sign(
